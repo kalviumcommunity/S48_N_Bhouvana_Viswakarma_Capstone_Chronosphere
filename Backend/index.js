@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+
+// Middleware to parse JSON bodies
+app.use(express.json());
 
 app.get('/my-endpoint', (req, res) => {
     res.json({ message: 'Hello, This is my Capstone Project' });
@@ -24,12 +27,6 @@ app.put('/my-endpoint', (req, res) => {
     res.json({ message: `Project with ID ${id} has been updated to: Name - ${name}, Project - ${project}` });
 });
 
-
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:3000`);
+    console.log(`Server is running on http://localhost:${port}`);
 });
-
-
-
-
-
