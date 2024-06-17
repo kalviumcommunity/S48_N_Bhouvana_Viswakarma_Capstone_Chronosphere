@@ -1,25 +1,21 @@
 const mongoose = require('mongoose');
 
-const reviewSchema = new mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
-  },
-  watch: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Watch',
-    required: true,
-  },
-  rating: {
-    type: Number,
-    required: true,
-    min: 1,
-    max: 5,
-  },
-  reviewText: {
+const userSchema = new mongoose.Schema({
+  username: {
     type: String,
+    required: true,
+    unique: true,
   },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  // Add fields for profile picture, bio, etc.
 });
 
-module.exports = mongoose.model('Review', reviewSchema);
+module.exports = mongoose.model('User', userSchema);
