@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const Watch = require('../models.js/Watch');
+const Watch = require('../models/Watch');
 
 // Get all watches
 router.get('/', async (req, res) => {
   try {
-    const watches = await Watch.find();
+    const watches = await Watch.find().populate('reviews').populate('addedBy');
     res.json(watches);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 // Get a watch by ID
 router.get('/:id', async (req, res) => {
   try {
-    const watch = await Watch.findById(req.params.id);
+    const watch = await Watch.findById(req.params.id).populate('reviews').populate('addedBy');
     if (watch == null) {
       return res.status(404).json({ message: 'Cannot find watch' });
     }
