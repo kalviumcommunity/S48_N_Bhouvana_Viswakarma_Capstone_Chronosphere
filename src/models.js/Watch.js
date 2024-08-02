@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const WatchSchema = new mongoose.Schema({
+const WatchSchema = new Schema({
   brand: { type: String, required: true },
   model: { type: String, required: true },
   referenceNumber: { type: String },
@@ -21,16 +22,10 @@ const WatchSchema = new mongoose.Schema({
   warranty: { type: String },
   images: { type: [String] },
   manuals: { type: [String] },
-  reviews: [{ 
-    userId: { type: String },
-    rating: { type: Number, min: 1, max: 5 },
-    comment: { type: String }
-  }],
+  reviews: [{ type: Schema.Types.ObjectId, ref: 'Review' }],
   dateAdded: { type: Date, default: Date.now },
   lastUpdated: { type: Date, default: Date.now },
-  addedBy: { type: String },
+  addedBy: { type: Schema.Types.ObjectId, ref: 'User' },
 });
 
-const Watch = mongoose.model('Watch', WatchSchema);
-
-module.exports = Watch;
+module.exports = mongoose.model('Watch', WatchSchema);

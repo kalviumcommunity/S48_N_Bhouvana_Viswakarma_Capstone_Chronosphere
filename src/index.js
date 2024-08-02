@@ -1,12 +1,11 @@
+const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const watchRoutes = require('./routes/watches'); // Adjust path if needed
 
-const express = require('express');
 const app = express();
 const port = process.env.PORT || 2000;
-
 
 // Middleware
 app.use(cors());
