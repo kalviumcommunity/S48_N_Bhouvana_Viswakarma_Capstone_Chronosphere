@@ -28,3 +28,4 @@ function MainContent() {
 }
 
 export default MainContent;
+console.log('MainContent component rendered');
