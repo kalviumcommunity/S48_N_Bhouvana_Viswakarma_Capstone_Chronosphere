@@ -1,0 +1,71 @@
+/* MainContent.css */
+.main-content {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 250px; /* Space from top */
+}
+
+.header {
+  margin-bottom: 50px;
+}
+
+.brand-name {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  color: #e0b870;
+}
+
+.watch-section {
+  margin-left: 440px;
+  margin-bottom: 50px;
+}
+
+.cta-section {
+  margin-bottom: 50px;
+}
+
+.cta-text {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  padding: 10px 30px;
+  background-color: #e0b870;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #c89c5a;
+}
+
+.features-section {
+  margin-top: 50px;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+  color: #a3a3a3;
+}
+
+.features-list li {
+  margin-bottom: 15px;
+}
+
+.features-list li:hover {
+  color: #e0b870;
+}
